@@ -38,17 +38,22 @@ parser.add_argument('month', metavar='month', type=int, nargs=1,
                     help='Month for which to generate the colocations.')
 parser.add_argument('output_file', metavar='output_file', type=str, nargs=1,
                     help='Filename of output file.')
+parser.add_argument('--cache', metavar='cache_folder', type=str, nargs=1,
+                    default="../data", help='Folder to use as cache.')
+
+
 
 args = parser.parse_args()
 year = args.year[0]
 month = args.month[0]
 output_file = args.output_file[0]
+cache = args.cache[0]
 
 ################################################################################
 # Preparations
 ################################################################################
 
-set_cache("../data")
+set_cache(cache)
 
 
 output_file = create_output_file(output_file)
@@ -142,7 +147,7 @@ for day in range(days):
 
         output_file["start_time"][scene_id] = ts.strftime("%Y%m%d%H%M%S")
         output_file["end_time"][scene_id] = te.strftime("%Y%m%d%H%M%S")
-        output_file["mask"][scene_id] = mask.T
+        output_file["mask"][scene_id, :, :] = mask.T
 
         output_file["scene_id"][m : n] = scene_id
         output_file["lon"][m : n, :] = lons[i_start : i_end, :]
