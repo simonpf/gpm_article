@@ -113,7 +113,6 @@ for day in range(days):
         data_5 = np.zeros((int(x_size), int(y_size), t.size))
         for i, of in enumerate(files_opera):
             data_5[:, :, i] = of.get_smoothed_data(5e3)[0].T[:, ::-1]
-        mask = np.all(np.logical_not(np.isnan(data_5)), axis = -1)
 
         int_5 = sp.interpolate.RegularGridInterpolator((x, y, t),
                                                     data_5,
@@ -147,7 +146,6 @@ for day in range(days):
 
         output_file["start_time"][scene_id] = ts.strftime("%Y%m%d%H%M%S")
         output_file["end_time"][scene_id] = te.strftime("%Y%m%d%H%M%S")
-        output_file["mask"][scene_id, :, :] = mask.T
 
         output_file["scene_id"][m : n] = scene_id
         output_file["lon"][m : n, :] = lons[i_start : i_end, :]

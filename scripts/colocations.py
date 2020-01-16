@@ -15,7 +15,6 @@ def create_output_file(path):
     f.createVariable("scene_id", "i8", ("scenes"))
     f.createVariable("start_time", "c", ("swaths", "date_string"))
     f.createVariable("end_time", "c", ("swaths", "date_string"))
-    f.createVariable("mask", "i4", ("swaths", "y_size", "x_size"))
 
     # Location
     f.createVariable("lon", "f4", ("swaths", "swath_width"))
