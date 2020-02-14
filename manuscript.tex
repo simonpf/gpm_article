@@ -1,30 +1,59 @@
-\title{}
+\title{Probabilistic retrievals of precipitation for the GPM constellation using machine learning}
 \author{Teodor Norrestad, Simon Pfreundschuh, Patrick Eriksson}
 \date{\today}
 
 \documentclass[12pt]{scrartcl}
+
+\usepackage{todonotes}
 
 \begin{document}
 \maketitle
 
 \section{Introduction}
 
+\todo{Significance of rain}
+
+It is difficult to understate the importance of precipitation within  the
+Earth's climate system or its relevance for many areas of human activity.
+
+\todo{Evolution of GPROF}
+
+The initial version of the Goddard Profiling Algorithm (GPROF) was designed to
+provide a computationally efficient method for retrieving precipitation profiles
+and surface precipitation from the passive observations from the Tropical
+Rainfall Measurement Mission (TRMM, \citet{grecu04}) Microwave Imager. Since
+then, it has gone through several stages of development \citep{kummerow01,
+kummerow11} and has evolved into a fully-parametric scheme that is used to retrieve
+precipitation from all sensors of the Global Precipitation Measurement Mission
+(GPM, \citet{hou14}).
+
+\citet{kummerow96}
+
+\todo{Differences between QRNN and MCI}
+
+\todo{What we do in this article}
+
+\end{itemize}
+
 \section{Methods and data}
+
+\subsection{Monte carlo integration}
+
+\subsection{Quantile regression neural networks}
+
+\subsection{Estimating the posterior distribution}
+
+\subsection{Datasets}
 
 \section{Results}
 
-\begin{itemize}
-  \item performance on GPROF test data (GMI, MHS), ocean
-  \item performance on GPROF test data other surfaces
-  \item case studies:
-    \begin{itemize}
-    \item Adding elevation information to the the retrieval
-    \item \textit{Potentially} embedding spatial structure
-    \end{itemize}
-\end{itemize}
+\subsection{Internal validation}
+
+\subsection{External validation}
 
 \section{Discussion}
 
 \section{Conclusions}
+
 
 \end{document}
